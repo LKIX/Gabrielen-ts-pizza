@@ -7,5 +7,5 @@ export class IngredienteService {
 
   constructor() { }
 
-  private baseUrl = "";
+  private baseUrl = "http://localhost:8080/api/v1/ingredientes";
 }

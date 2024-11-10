@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("perreito/kene/delicioso")
+@RequestMapping("/api/v1/")
 public class IngredienteControlador {
 
     @Autowired
@@ -17,5 +17,4 @@ public class IngredienteControlador {
     public List<Ingrediente> ListarIngredientes(){
         return repositorio.findAll();
     }
-    
 }
