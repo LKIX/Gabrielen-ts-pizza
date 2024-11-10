@@ -1,0 +1,17 @@
+<h2>Lista ingredientes</h2>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>nombre</th>
+      <th>id</th>
+      <th>cantidad</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor= "let ingrediente of ingredientes">
+      <td>{{ingrediente.nombre}}</td>
+      <td>{{ingrediente.id}}</td>
+      <td>{{ingrediente.cantidad}}</td>
+    </tr>
+  </tbody>
+</table>
