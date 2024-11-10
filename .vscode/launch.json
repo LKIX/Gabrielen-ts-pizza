@@ -3,6 +3,13 @@
   "version": "0.2.0",
   "configurations": [
     {
+      "type": "java",
+      "name": "CrudrapidoApplication",
+      "request": "launch",
+      "mainClass": "com.example.crudrapido.CrudrapidoApplication",
+      "projectName": "crudrapido"
+    },
+    {
       "name": "ng serve",
       "type": "chrome",
       "request": "launch",
