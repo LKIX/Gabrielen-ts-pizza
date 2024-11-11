@@ -2,6 +2,7 @@ import { IngredienteService } from './../ingrediente.service';
 import { NgFor } from '@angular/common';
 import { Ingrediente } from './../ingrediente';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-lista-ingredientes',
@@ -12,18 +13,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListaIngredientesComponent implements OnInit {
 
-  ingredientes:Ingrediente[];
+  ingredientes: Ingrediente[];
 
-  constructor(private ingredienteServicio : IngredienteService) {}
+  constructor(private ingredienteServicio: IngredienteService, private router: Router) { }
 
   ngOnInit(): void {
     this.obtenerIngredientes();
   }
 
-  private obtenerIngredientes(){
-    this.ingredienteServicio.obtenerListaDeIngredientes().subscribe(dato =>{
+  private obtenerIngredientes() {
+    this.ingredienteServicio.obtenerListaDeIngredientes().subscribe(dato => {
       this.ingredientes = dato;
     })
+  }
+
+  redirigir() {
+    this.router.navigate(["/lista-ingredientes"])
   }
 
 }

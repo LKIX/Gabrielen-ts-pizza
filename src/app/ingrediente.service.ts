@@ -11,9 +11,9 @@ export class IngredienteService {
 
   private baseURL = "http://localhost:8080/api/v1/ingredientes";
 
-  constructor( private httpClient : HttpClient) {}
+  constructor(private httpClient: HttpClient) { }
 
-  obtenerListaDeIngredientes():Observable<Ingrediente[]>{
+  obtenerListaDeIngredientes(): Observable<Ingrediente[]> {
     return this.httpClient.get<Ingrediente[]>(`${this.baseURL}`);
   }
 }
