@@ -1,7 +1,12 @@
 package com.example.crudrapido.model;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Inheritance;
+import jakarta.persistence.InheritanceType;
+import jakarta.persistence.Table;
 
 @Entity(name="ingrediente")
 @Table(name="tbl_ingrediente")
@@ -65,6 +70,14 @@ public class Ingrediente {
 
     public void setCantidadPizzaIndividual(float cantidadPizzaIndividual) {
         this.cantidadPizzaIndividual = cantidadPizzaIndividual;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 }
