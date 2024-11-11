@@ -28,7 +28,7 @@ export class ListaIngredientesComponent implements OnInit {
   }
 
   redirigir() {
-    this.router.navigate(["/lista-ingredientes"])
+    this.router.navigate(["/registro-ingredientes"])
   }
 
 }

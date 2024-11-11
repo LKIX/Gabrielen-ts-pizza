@@ -1,4 +1,24 @@
 <h2>Lista ingredientes</h2>
+<style>.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #4CAF50; /* Color verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Manito de cursor */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
+}
+</style>
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
@@ -21,4 +41,4 @@
     </tr>
   </tbody>
 </table>
-<button (click)="redirigir()">Ir</button>
+<div class="btn-container"> <button class="btn" (click)="redirigir()">Registrar Ingrediente</button> </div>
