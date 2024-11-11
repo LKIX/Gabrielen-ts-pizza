@@ -1,7 +1,5 @@
 package com.example.crudrapido.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 @Entity(name="ingredienteGramos")
 @Table(name="tbl_ingredienteGramos")

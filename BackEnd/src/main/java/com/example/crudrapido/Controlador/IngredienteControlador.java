@@ -1,7 +1,7 @@
-package Controlador;
+package com.example.crudrapido.Controlador;
 import java.util.List;
 
-import Repository.IngredienteRepositorio;
+import com.example.crudrapido.Repository.IngredienteRepositorio;
 import com.example.crudrapido.model.Ingrediente;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Example;
@@ -18,7 +18,7 @@ public class IngredienteControlador {
     @Autowired
     private IngredienteRepositorio repositorio;
 
-    @GetMapping("/ingrediente")
+    @GetMapping("/ingredientes")
     public List<Ingrediente> ListarIngredientes(){
         return repositorio.findAll();
     }

@@ -1,4 +1,4 @@
-package Repository;
+package com.example.crudrapido.Repository;
 
 import com.example.crudrapido.model.Ingrediente;
 import org.springframework.data.jpa.repository.JpaRepository;
