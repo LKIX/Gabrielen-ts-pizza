@@ -16,4 +16,9 @@ export class IngredienteService {
   obtenerListaDeIngredientes(): Observable<Ingrediente[]> {
     return this.httpClient.get<Ingrediente[]>(`${this.baseURL}`);
   }
+
+  registrarIngrediente(ingrediente: Ingrediente): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, ingrediente)
+  }
+
 }
