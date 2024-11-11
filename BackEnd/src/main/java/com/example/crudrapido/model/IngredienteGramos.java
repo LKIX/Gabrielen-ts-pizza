@@ -10,9 +10,14 @@ import jakarta.persistence.Table;
 public class IngredienteGramos extends Ingrediente{
     private String Unidad= "Gr";
 
-    public IngredienteGramos(String id, String nombre, float cantidad) {
-        super(id, nombre, cantidad);
+    public IngredienteGramos( String nombre, float cantidad) {
+        super(nombre, cantidad);
     }
+
+    public IngredienteGramos() {
+
+    }
+
 
     public String getUnidad() {
         return Unidad;

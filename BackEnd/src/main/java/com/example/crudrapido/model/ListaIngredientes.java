@@ -12,12 +12,12 @@ public class ListaIngredientes {
         return this.ingredientes;
     }
 
-    public void agregarIngrediente(String id, String nombre, float cantidad, String unidad){
+    public void agregarIngrediente( String nombre, float cantidad, String unidad){
          if(unidad.equals("gr")){
-             IngredienteGramos ingrediente= new IngredienteGramos(id,nombre,cantidad);
+             IngredienteGramos ingrediente= new IngredienteGramos(nombre,cantidad);
              this.ingredientes.add(ingrediente);
          } else if (unidad.equals("Und")) {
-             IngredienteUnidad ingrediente= new IngredienteUnidad(id,nombre,cantidad);
+             IngredienteUnidad ingrediente= new IngredienteUnidad(nombre,cantidad);
              this.ingredientes.add(ingrediente);
          }
     }

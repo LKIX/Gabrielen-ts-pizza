@@ -1,35 +1,29 @@
 package com.example.crudrapido.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.*;
 import jakarta.persistence.Id;
-import jakarta.persistence.Inheritance;
-import jakarta.persistence.InheritanceType;
-import jakarta.persistence.Table;
 
 @Entity(name="ingrediente")
 @Table(name="tbl_ingrediente")
 @Inheritance(strategy = InheritanceType.JOINED)
-
 public class Ingrediente {
-    
+
     @Id
-    @GeneratedValue
-    private String id;
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Integer id;
     private String nombre;
     private float cantidad;
     private float cantidadPizzaGrande;
     private float cantidadPizzaMediana;
     private float cantidadPizzaIndividual;
 
-    public Ingrediente(String id, String nombre, float cantidad) {
-        this.id = id;
+    public Ingrediente( String nombre, float cantidad) {
         this.nombre = nombre;
         this.cantidad = cantidad;
     }
 
-    public String getId() {
-        return id;
+    public Ingrediente() {
+
     }
 
     public String getNombre() {
@@ -38,10 +32,6 @@ public class Ingrediente {
 
     public float getCantidad() {
         return cantidad;
-    }
-
-    public void setId(String id) {
-        this.id = id;
     }
 
     public void setNombre(String nombre) {

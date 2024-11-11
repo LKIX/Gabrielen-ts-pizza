@@ -1,6 +1,7 @@
 package com.example.crudrapido.model;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
@@ -11,10 +12,14 @@ import jakarta.persistence.Table;
 @PrimaryKeyJoinColumn(name="id",referencedColumnName="id")
 
 public class BebidaNatural extends Bebida {
-    private ArrayList<Integer> listaBebida;
+    private List<Integer> listaBebida;
 
-    public BebidaNatural(String nombre, String id, float precio) {
-        super(nombre, id, precio);
+    public BebidaNatural(String nombre,float precio) {
+        super(nombre, precio);
+        listaBebida = new ArrayList<>();
     }
-    
+
+    public BebidaNatural() {
+        super();
+    }
 }

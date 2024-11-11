@@ -11,8 +11,12 @@ import jakarta.persistence.Table;
 public class IngredienteUnidad extends Ingrediente{
     private String Unidad = "Und";
 
-    public IngredienteUnidad(String id, String nombre, float cantidad) {
-        super(id, nombre, cantidad);
+    public IngredienteUnidad(String nombre, float cantidad) {
+        super(nombre, cantidad);
+    }
+
+    public IngredienteUnidad() {
+
     }
 
     public String getUnidad() {

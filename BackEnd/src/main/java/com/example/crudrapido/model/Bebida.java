@@ -13,7 +13,11 @@ import jakarta.persistence.Table;
 @Inheritance(strategy = InheritanceType.JOINED)
 
 public class Bebida extends Producto {
-    public Bebida(String nombre, String id, float precio ) {
-        super(nombre, id,precio);
+    public Bebida(String nombre, float precio ) {
+        super(nombre,precio);
+    }
+
+    public Bebida() {
+        super();
     }
 }
