@@ -2,16 +2,30 @@
 <table class="table table-striped">
   <thead class="table-dark">
     <tr>
-      <th>nombre</th>
-      <th>id</th>
-      <th>cantidad</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Cantidad Pizza Grande</th>
+      <th>Cantidad Pizza Mediana</th>
+      <th>Cantidad Pizza Individual</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor= "let ingrediente of ingredientes">
-      <td>{{ingrediente.nombre}}</td>
+    <tr *ngFor= "let ingrediente of ingredientes"> /*gramos*/
       <td>{{ingrediente.id}}</td>
+      <td>{{ingrediente.nombre}}</td>
       <td>{{ingrediente.cantidad}}</td>
+      <td>{{ingrediente.cantidadPizzaGrande}}</td>
+      <td>{{ingrediente.cantidadPizzaMediana}}</td>
+      <td>{{ingrediente.cantidadPizzaMediana}}</td>
+    </tr>
+    <tr *ngFor= "let ingrediente  of ingredientes"> /*unidad*/
+      <td>{{ingrediente.id}}</td>
+      <td>{{ingrediente.nombre}}</td>
+      <td>{{ingrediente.cantidad}}</td>
+      <td>{{ingrediente.cantidadPizzaGrande}}</td>
+      <td>{{ingrediente.cantidadPizzaMediana}}</td>
+      <td>{{ingrediente.cantidadPizzaMediana}}</td>
     </tr>
   </tbody>
 </table>

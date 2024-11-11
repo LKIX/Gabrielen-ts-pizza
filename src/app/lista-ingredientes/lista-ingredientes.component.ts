@@ -1,3 +1,4 @@
+import { IngredienteService } from './../ingrediente.service';
 import { NgFor } from '@angular/common';
 import { Ingrediente } from './../ingrediente';
 import { Component, OnInit } from '@angular/core';
@@ -13,22 +14,17 @@ export class ListaIngredientesComponent implements OnInit {
 
   ingredientes:Ingrediente[];
 
-  constructor() {}
+  constructor(private ingredienteServicio : IngredienteService) {}
 
   ngOnInit(): void {
-    this.ingredientes =[{
-        "id":"1234",
-        "nombre": "Queso",
-        "cantidad": "100",
-    },
-    {
-        "id":"1235",
-        "nombre": "Tomate",
-        "cantidad": "25",
-    }
-  ];
+    this.obtenerIngredientes();
   }
 
+  private obtenerIngredientes(){
+    this.ingredienteServicio.obtenerListaDeIngredientes().subscribe(dato =>{
+      this.ingredientes = dato;
+    })
+  }
 
 }
 
