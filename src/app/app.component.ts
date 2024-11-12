@@ -19,10 +19,7 @@ export class AppComponent {
   redirigir() {
     this.router.navigate(["/lista-ingredientes"])
   }
-  redirigirPizza() {
+  redirigirProducto() {
     this.router.navigate(["/lista-pizzas"])
-  }
-  redirigirBebidaProcesadas() {
-    this.router.navigate(["/lista-bebidas-procesadas"])
   }
 }
