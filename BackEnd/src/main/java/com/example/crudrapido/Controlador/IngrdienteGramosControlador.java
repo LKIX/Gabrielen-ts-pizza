@@ -1,15 +1,12 @@
 package com.example.crudrapido.Controlador;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
 import com.example.crudrapido.Repository.IngredienteGramosRepository;
 import com.example.crudrapido.model.IngredienteGramos;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/v2/")
@@ -17,13 +14,15 @@ import com.example.crudrapido.model.IngredienteGramos;
 public class IngrdienteGramosControlador {
     @Autowired
     private IngredienteGramosRepository repositorioIngredientesGramos;
-    @GetMapping("/ingredientesGramos")
-    public List<IngredienteGramos> ListarIngredientes(){
-        return repositorioIngredientesGramos.findAll();
-    }
-    @GetMapping("/crearGramos")
-    public void guardarIngrediente(){
-        IngredienteGramos ingredienteGramos = new IngredienteGramos("queso",10);
-            repositorioIngredientesGramos.save(ingredienteGramos);
+
+    @PostMapping ("/Ingredientes")
+    public IngredienteGramos guardarIngrediente(@RequestBody IngredienteGramos ingredienteGramos) {
+          List<IngredienteGramos> revisar=repositorioIngredientesGramos.findAll();
+          for(IngredienteGramos i:revisar){
+              if (i.getNombre().equals(ingredienteGramos.getNombre())) {
+                  return null;
+              }
+          }
+          return repositorioIngredientesGramos.save(ingredienteGramos);
     }
 }
