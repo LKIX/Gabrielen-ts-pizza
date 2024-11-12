@@ -1,6 +1,5 @@
-import { IngredienteService } from './../ingrediente.service';
+
 import { NgFor } from '@angular/common';
-import { Ingrediente } from './../ingrediente';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PizzaService } from '../pizza.service';
@@ -20,7 +19,7 @@ export class PizzaComponent implements OnInit {
   constructor(private pizzaServicio: PizzaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.pizzaServicio.obtenerListaDePizzas();
+    this.obtenerPizzas();
   }
 
   private obtenerPizzas() {

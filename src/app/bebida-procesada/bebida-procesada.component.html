@@ -1,1 +1,48 @@
-<p>bebida-procesada works!</p>
+<style>
+    .btn-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        /* Color verde */
+        color: white;
+        /* Texto blanco */
+        padding: 10px 20px;
+        /* Relleno */
+        border: none;
+        /* Sin bordes */
+        border-radius: 4px;
+        /* Bordes redondeados */
+        cursor: pointer;
+        /* Manito de cursor */
+        font-size: 16px;
+        /* Tamaño de fuente */
+        transition: background-color 0.3s ease;
+        /* Transición suave */
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+        /* Color verde más oscuro al pasar el cursor */
+    }
+</style>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let bebidaProcesada of bebidasProcesadas">
+            <td>{{bebidaProcesada.id}}</td>
+            <td>{{bebidaProcesada.nombre}}</td>
+            <td>{{bebidaProcesada.precio}}</td>
+        </tr>
+    </tbody>
+</table>
+<div class="btn-container"> <button class="btn" (click)="
+  redirigirBebidasProcesadas()">Registrar Bebida Procesada</button> </div>

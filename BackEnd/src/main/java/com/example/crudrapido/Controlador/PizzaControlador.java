@@ -14,18 +14,20 @@ import com.example.crudrapido.Repository.PizzaRepostory;
 import com.example.crudrapido.model.Pizza;
 
 @RestController
-@RequestMapping("/api/v1/")
+@RequestMapping("/api/v3/")
 @CrossOrigin(origins = "http://localhost:4200")
 public class PizzaControlador {
   @Autowired
-  private  PizzaRepostory pizzaRepostory;
+  private PizzaRepostory pizzaRepostory;
 
   @GetMapping("/pizzas")
   public List<Pizza> ListarPizzas(){
+    System.out.println(pizzaRepostory.findAll());
     return pizzaRepostory.findAll();
   }
   @PostMapping("/pizzas")
-  public Pizza guardarPizza(@RequestBody Pizza pizza){        
+  public Pizza guardarPizza(@RequestBody Pizza pizza){
+    System.out.println(pizza.getPrecioGrande());        
     return pizzaRepostory.save(pizza);
     /*List<Pizza> revisar=pizzaRepostory.findAll();
     boolean revisarB=true;

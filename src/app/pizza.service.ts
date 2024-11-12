@@ -10,7 +10,7 @@ import { Pizza } from './Pizza';
 export class PizzaService {
 
 
-  private baseURL = "http://localhost:8080/api/v1/pizzas";
+  private baseURL = "http://localhost:8080/api/v3/pizzas";
 
 
   constructor(private httpClient: HttpClient) { }
@@ -20,7 +20,7 @@ export class PizzaService {
   }
 
   registrarPizza(pizza: Pizza): Observable<Object> {
-    //console.log(pizza.ID, pizza.idsPizza, pizza.nombre, pizza.precio, pizza.precioPizzaGrande, pizza.precioPizzaIndividual);
+    console.log(pizza.ID, pizza.nombre, pizza.precio, pizza.precioPizzaGrande, pizza.precioPizzaIndividual);
     return this.httpClient.post(`${this.baseURL}`, pizza)
 
   }

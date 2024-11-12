@@ -22,6 +22,6 @@ export const routes: Routes = [
         loadComponent: () => import('./bebida-procesada/bebida-procesada.component').then(m => m.BebidaProcesadaComponent)
     }, {
         path: 'registro-bebidasProcesadas',
-        loadComponent: () => import('./registrar-pizza/registrar-pizza.component').then(m => m.RegistrarPizzaComponent)
+        loadComponent: () => import('./registrar-bebida-procesada/registrar-bebida-procesada.component').then(m => m.RegistrarBebidaProcesadaComponent)
     }
 ];
