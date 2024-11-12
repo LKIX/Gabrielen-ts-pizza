@@ -30,13 +30,19 @@ public class IngredienteControlador {
     }
     @PostMapping("/ingredientes")
     public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
-        Example<Ingrediente> example = Example.of(ingrediente);
-        if(repositorio.exists(example)){
-            System.out.println("Existe un ingrediente");
-            return null;
-        }
-        else{
-        return repositorio.save(ingrediente);
-    }
+      List<Ingrediente> revisar=repositorio.findAll();
+      boolean revisarB=true;
+      for(Ingrediente i:revisar){
+          if (i.getNombre().equals(ingrediente.getNombre())) {
+              revisarB = false;
+              break;
+          }
+      }
+      if(revisarB){
+
+          return repositorio.save(ingrediente);
+      }
+      else
+      {return null;}
     }
 }

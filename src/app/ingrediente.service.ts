@@ -1,3 +1,4 @@
+
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -19,6 +20,7 @@ export class IngredienteService {
 
   registrarIngrediente(ingrediente: Ingrediente): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, ingrediente)
+
   }
 
 }
