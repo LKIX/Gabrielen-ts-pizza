@@ -29,8 +29,8 @@ export class ListaIngredientesComponent implements OnInit {
     })
   }
 
-  eliminarIngrediente(id:number){
-    this.ingredienteServicio.eliminarIngrediente(id).subscribe(dato =>{
+  eliminarIngrediente(id: number) {
+    this.ingredienteServicio.eliminarIngrediente(id).subscribe(dato => {
       console.log(dato);
       this.obtenerIngredientes();
     })
@@ -39,6 +39,7 @@ export class ListaIngredientesComponent implements OnInit {
   redirigir() {
     this.router.navigate(["/registro-ingredientes"])
   }
+
 
 }
 

@@ -1,9 +1,5 @@
 package com.example.crudrapido.model;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
@@ -12,15 +8,15 @@ import jakarta.persistence.Table;
 @Table(name="tbl_pizza")
 @PrimaryKeyJoinColumn(name="id",referencedColumnName="id")
 public class Pizza extends Producto{
-    private List<Integer> idPizza;
+    //private List<Integer> idPizza;
     private float precioGrande;
     private float precioIndividual;
 
-    public Pizza(String nombre,  float precio, float precioGrande, float precioIndividual) {
+    public Pizza(String nombre,  float precio, float precioGrande, float precioIndividual/* ,  List<Integer> idPizza*/) {
         super(nombre,precio);
         this.precioGrande = precioGrande;
         this.precioIndividual = precioIndividual;
-        this.idPizza = new ArrayList<>();
+        //this.idPizza = idPizza;
     }
 
     public Pizza() {
@@ -44,7 +40,7 @@ public class Pizza extends Producto{
         this.precioIndividual = precioIndividual;
     }
 
-    public List<Integer> getIdPizza() {
+    /*public List<Integer> getIdPizza() {
         return idPizza;
     }
 
@@ -54,7 +50,7 @@ public class Pizza extends Producto{
 
     public void ingredienteAdd(int id){
         this.idPizza.add(id);
-    }
+    }*/
     
 
 }
