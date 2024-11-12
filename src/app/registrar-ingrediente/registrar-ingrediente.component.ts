@@ -5,6 +5,7 @@ import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsMo
 import { IngredienteService } from '../ingrediente.service';
 import { Router } from '@angular/router';
 
+
 @Component({
   selector: 'app-registrar-ingrediente',
   standalone: true,

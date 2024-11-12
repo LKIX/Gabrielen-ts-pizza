@@ -1,5 +1,5 @@
 export class Ingrediente {
-  id:string;
+  id:number;
   nombre:string;
   cantidad:string;
   cantidadPizzaGrande:string;

@@ -1,3 +1,4 @@
+
 import { IngredienteService } from './../ingrediente.service';
 import { NgFor } from '@angular/common';
 import { Ingrediente } from './../ingrediente';
@@ -22,8 +23,16 @@ export class ListaIngredientesComponent implements OnInit {
   }
 
   private obtenerIngredientes() {
+
     this.ingredienteServicio.obtenerListaDeIngredientes().subscribe(dato => {
       this.ingredientes = dato;
+    })
+  }
+
+  eliminarIngrediente(id:number){
+    this.ingredienteServicio.eliminarIngrediente(id).subscribe(dato =>{
+      console.log(dato);
+      this.obtenerIngredientes();
     })
   }
 

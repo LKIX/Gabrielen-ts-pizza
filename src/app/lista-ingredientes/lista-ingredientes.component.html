@@ -38,6 +38,9 @@
       <td>{{ingrediente.cantidadPizzaGrande}}</td>
       <td>{{ingrediente.cantidadPizzaMediana}}</td>
       <td>{{ingrediente.cantidadPizzaIndividual}}</td>
+      <td>
+      <button (click)= "eliminarIngrediente(ingrediente.id)" class="btn btn-info;" style="margin-left : 10px; background-color: crimson;" >Eliminar</button>
+    </td>
     </tr>
   </tbody>
 </table>
