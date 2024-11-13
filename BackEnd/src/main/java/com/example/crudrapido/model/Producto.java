@@ -30,9 +30,8 @@ public class Producto {
   private Integer ingrediente4;
   private Integer ingrediente5;
 
-  public Producto(Integer id, String nombre, float precio, float precioGrande, float precioIndividual,
+  public Producto(String nombre, float precio, float precioGrande, float precioIndividual,
       Integer ingrediente1, Integer ingrediente2, Integer ingrediente3, Integer ingrediente4, Integer ingrediente5) {
-    this.id = id;
     this.nombre = nombre;
     this.precio = precio;
     this.precioGrande = precioGrande;

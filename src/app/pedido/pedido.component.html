@@ -1,0 +1,57 @@
+<style>
+    .btn-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .btn {
+        background-color: #4CAF50;
+        /* Color verde */
+        color: white;
+        /* Texto blanco */
+        padding: 10px 20px;
+        /* Relleno */
+        border: none;
+        /* Sin bordes */
+        border-radius: 4px;
+        /* Bordes redondeados */
+        cursor: pointer;
+        /* Manito de cursor */
+        font-size: 16px;
+        /* Tamaño de fuente */
+        transition: background-color 0.3s ease;
+        /* Transición suave */
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+        /* Color verde más oscuro al pasar el cursor */
+    }
+</style>
+<table class="table table-striped">
+    <thead class="table-dark">
+        <tr>
+            <th>ID</th>
+            <th>Nombre Productos</th>
+    </thead>
+    <tbody>
+        <tr *ngFor="let Pedido of Pedidos">
+            <td>{{Pedido.id}}</td>
+            <td>{{Pedido.pedido1}}</td>
+            <td>{{Pedido.pedido2}}</td>
+            <td>{{Pedido.pedido3}}</td>
+            <td>{{Pedido.pedido4}}</td>
+            <td>{{Pedido.pedido5}}</td>
+            <td>{{Pedido.pedido6}}</td>
+            <td>{{Pedido.pedido7}}</td>
+            <td>{{Pedido.pedido8}}</td>
+            <td>{{Pedido.pedido9}}</td>
+            <td>{{Pedido.pedido10}}</td>
+            <td>
+                <button class="btn btn-info;" (click)= "eliminarPedido(Pedido.id)"
+                    style="margin-left : 10px; background-color: crimson;">Eliminar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<div class="btn-container"> <button class="btn" (click)="redirigirPedido()">Registrar Pedido</button> </div>

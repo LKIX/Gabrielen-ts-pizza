@@ -22,4 +22,7 @@ export class AppComponent {
   redirigirProducto() {
     this.router.navigate(["/producto"])
   }
+  redirigirPedido() {
+    this.router.navigate(["/pedido"])
+  }
 }
