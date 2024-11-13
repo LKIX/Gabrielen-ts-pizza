@@ -1,0 +1,47 @@
+<style>.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #4CAF50; /* Color verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Manito de cursor */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
+}
+</style>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Precio Individual</th>
+      <th>Precio Mediana</th>
+      <th>Precio Grande</th>
+      <th>Lista Id de ingredientes</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let Producto of Productos">
+      <td>{{producto.id}}</td>
+      <td>{{producto.nombre}}</td>
+      <td>{{producto.preioIndividual}}</td>
+      <td>{{producto.precio}}</td>
+      <td>{{producto.precioGrande}}</td>
+      <td>{{producto.listaProductos}}</td>
+      <td></td>
+
+    </tr>
+  </tbody>
+</table>
+<div class="btn-container"> <button class="btn" (click)="redirigirProducto()">Registrar Producto</button> </div>
+

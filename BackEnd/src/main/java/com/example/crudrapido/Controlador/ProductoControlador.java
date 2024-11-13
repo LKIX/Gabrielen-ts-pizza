@@ -14,12 +14,12 @@ public class ProductoControlador {
   @Autowired
   private ProductoRepositorio repositorio;
 
-  @GetMapping("/")
+  @GetMapping("/productos")
   public List<Producto> listarProducto(){
     return repositorio.findAll();
   }
 
-  @PostMapping("/")
+  @PostMapping("/productos")
   public Producto crearProducto(@RequestBody Producto producto){
     return repositorio.save(producto);
   }

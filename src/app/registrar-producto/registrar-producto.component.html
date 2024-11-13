@@ -1,0 +1,73 @@
+<div class="form-container">
+  <style>.form-container {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-container h2 {
+  margin-bottom: 15px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form-group .btn {
+  background-color: #4CAF50; /* Color verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Manito de cursor */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.form-group .btn:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
+}
+</style>
+  <h2>Registrar Producto</h2>
+  <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="nombre">Nombre del Producto:</label>
+          <input type="text" id="nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidad">Precio Individual:</label>
+          <input type="number" id="cantidad" [(ngModel)]="producto.precioIndividual" name="cantidad" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidadPizzaGrande">Precio Grande:</label>
+          <input type="number" id="cantidadPizzaGrande" [(ngModel)]="producto.precioGrande"
+              name="cantidadPizzaGrande" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidadPizzaMediana">Precio Mediana:</label>
+          <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.precio"
+              name="cantidadPizzaMediana" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidadPizzaPequena">Lista Id de ingredientes:</label>
+          <input type="number" id="cantidadPizzaPequena" [(ngModel)]="producto.listaProductos"
+              name="cantidadPizzaPequena" required>
+      </div>
+      <div class="form-group">
+          <button type="submit" class="btn">Registrar Producto</button>
+      </div>
+  </form>
+</div>

@@ -20,6 +20,6 @@ export class AppComponent {
     this.router.navigate(["/lista-ingredientes"])
   }
   redirigirProducto() {
-    this.router.navigate(["/lista-pizzas"])
+    this.router.navigate(["/producto"])
   }
 }
