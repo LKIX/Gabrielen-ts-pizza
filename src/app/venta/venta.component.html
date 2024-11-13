@@ -1,0 +1,60 @@
+<style>.btn-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.btn {
+  background-color: #4CAF50; /* Color verde */
+  color: white; /* Texto blanco */
+  padding: 10px 20px; /* Relleno */
+  border: none; /* Sin bordes */
+  border-radius: 4px; /* Bordes redondeados */
+  cursor: pointer; /* Manito de cursor */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.btn:hover {
+  background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
+}
+</style>
+<table class="table table-striped">
+  <thead class="table-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Cedula</th>
+      <th>Producto 1</th>
+      <th>Producto 2</th>
+      <th>Producto 3</th>
+      <th>Producto 4</th>
+      <th>Producto 5</th>
+      <th>Producto 6</th>
+      <th>Producto 7</th>
+      <th>Producto 8</th>
+      <th>Producto 9</th>
+      <th>Producto 10</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let venta of ventas">
+      <td>{{venta.id}}</td>
+      <td>{{venta.nombre}}</td>
+      <td>{{venta.cedula}}</td>
+      <td>{{venta.producto1}}</td>
+      <td>{{venta.producto2}}</td>
+      <td>{{venta.producto3}}</td>
+      <td>{{venta.producto4}}</td>
+      <td>{{venta.producto5}}</td>
+      <td>{{venta.producto6}}</td>
+      <td>{{venta.producto7}}</td>
+      <td>{{venta.producto8}}</td>
+      <td>{{venta.producto9}}</td>
+      <td>{{venta.producto10}}</td>
+      <td>
+      <button (click)= "eliminarVenta(venta.id)" class="btn btn-info;" style="margin-left : 10px; background-color: crimson;" >Eliminar</button>
+    </td>
+    </tr>
+  </tbody>
+</table>
+<div class="btn-container"> <button class="btn" (click)="redirigirVenta()">Registrar Venta</button> </div>

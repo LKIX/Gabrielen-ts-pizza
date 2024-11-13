@@ -24,7 +24,16 @@ export const routes: Routes = [
     , {
         path: 'registro-pedido',
         loadComponent: () => import('./registrar-pedido/registrar-pedido.component').then(m => m.RegistrarPedidoComponent)
-    }
+    },
+    {
+      path: 'venta',
+      loadComponent: () => import('./venta/venta.component').then(m => m.VentaComponent)
+  }
+  , {
+      path: 'registro-venta',
+      loadComponent: () => import('./registrar-venta/registrar-venta.component').then(m => m.RegistrarVentaComponent)
+  }
+
 
 
 
