@@ -10,7 +10,7 @@ import { Producto } from './producto';
 export class ProductoService {
 
 
-  private baseURL = "http://localhost:8080/api/v1/Productos";
+  private baseURL = "http://localhost:8080/api/v1/productos";
 
 
   constructor(private httpClient: HttpClient) { }
@@ -20,11 +20,13 @@ export class ProductoService {
   }
 
   registrarProducto(Producto: Producto): Observable<Object> {
+    console.log(Producto);
     return this.httpClient.post(`${this.baseURL}`, Producto)
 
   }
 
   eliminarProducto(id: number): Observable<Object> {
+
     return this.httpClient.post(`${this.baseURL}/${id}`, Producto);
   }
 }

@@ -31,15 +31,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let Producto of Productos">
+    <tr *ngFor="let producto of Productos">
       <td>{{producto.id}}</td>
       <td>{{producto.nombre}}</td>
-      <td>{{producto.preioIndividual}}</td>
+      <td>{{producto.precioIndividual}}</td>
       <td>{{producto.precio}}</td>
       <td>{{producto.precioGrande}}</td>
       <td>{{producto.listaProductos}}</td>
-      <td></td>
-
+      <td>
+      <button (click)= "eliminarProducto(producto.id)" class="btn btn-info;" style="margin-left : 10px; background-color: crimson;" >Eliminar</button></td>
     </tr>
   </tbody>
 </table>

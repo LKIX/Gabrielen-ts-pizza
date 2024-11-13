@@ -13,4 +13,4 @@ const routes: Routes = [{ path: 'ingredientes', component: ListaIngredientesComp
     exports: [RouterModule]
   })
 
-export class AppRoutingModuke { } s
+export class AppRoutingModuke { }

@@ -23,4 +23,10 @@ public class ProductoControlador {
   public Producto crearProducto(@RequestBody Producto producto){
     return repositorio.save(producto);
   }
+
+  @PostMapping("/productos/{id}")
+  public void eliminarProducto(@PathVariable Integer id){
+      System.out.println("LLEGUE");
+      repositorio.deleteById(id);
+    }
 }

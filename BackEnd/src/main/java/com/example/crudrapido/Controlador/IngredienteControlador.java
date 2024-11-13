@@ -41,7 +41,6 @@ public class IngredienteControlador {
 
     @PostMapping("/ingredientes/{id}")
   public void eliminarIngrediente(@PathVariable Integer id){
-    System.out.println("LLEGUE");
       repositorio.deleteById(id);
     }
 }

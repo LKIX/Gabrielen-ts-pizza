@@ -32,12 +32,13 @@ export class ProductoComponent implements OnInit {
   eliminarProducto(id: number) {
     this.ProductoServicio.eliminarProducto(id).subscribe(dato => {
       console.log(dato);
+
       this.obtenerProductos();
     })
   }
 
-  redirigir() {
-    this.router.navigate(["/registro-Productos"])
+  redirigirProducto() {
+    this.router.navigate(["/registro-Producto"])
   }
 
 

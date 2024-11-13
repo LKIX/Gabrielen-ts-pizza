@@ -30,9 +30,12 @@ export class RegistrarProductoComponent implements OnInit {
   }
 
   irListaProductos() {
-    this.router.navigate(['lista-productos'])
+    this.router.navigate(['producto'])
   }
 
+  anadirIngrediente() {
+
+  }
 
   onSubmit() {
     this.guardarProducto();
