@@ -33,11 +33,15 @@ public class PedidoControlador {
 
   @PostMapping("/pedidos")
   public Pedido crearPedido(@RequestBody Pedido pedido){
-
-    return repositorio.save(pedido);
+    if(productoRepositorio.existsById(pedido.getPedido1())&&productoRepositorio.existsById(pedido.getPedido2())&&productoRepositorio.existsById(pedido.getPedido3())&&productoRepositorio.existsById(pedido.getPedido4())&&productoRepositorio.existsById(pedido.getPedido5())&&productoRepositorio.existsById(pedido.getPedido6())&&productoRepositorio.existsById(pedido.getPedido7())&&productoRepositorio.existsById(pedido.getPedido8())&&productoRepositorio.existsById(pedido.getPedido9())&&productoRepositorio.existsById(pedido.getPedido10())){
+      return repositorio.save(pedido);
+    }
+    return null;
   }
   @PostMapping("/pedidos/{id}")
   public void eliminarPedido(@PathVariable Integer id){
+
+
     repositorio.deleteById(id);
   }
 

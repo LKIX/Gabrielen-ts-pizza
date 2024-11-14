@@ -32,7 +32,11 @@ export class ProductoComponent implements OnInit {
   eliminarProducto(id: number) {
     this.ProductoServicio.eliminarProducto(id).subscribe(dato => {
       console.log(dato);
-      alert("Se elimino el producto satisfactoriamente")
+      if(dato){
+        alert("El producto se elimino satisfactoriamente")
+      }else{
+        alert("No se pudo eliminar su producto debido a que es un producto base")
+      }
       this.obtenerProductos();
     })
   }

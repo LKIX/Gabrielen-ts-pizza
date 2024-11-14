@@ -33,6 +33,7 @@ export class PedidoComponent implements OnInit {
     this.PedidoServicio.eliminarPedido(id).subscribe(dato => {
       console.log(dato);
 
+
       this.obtenerPedidos();
     })
   }

@@ -25,6 +25,11 @@ export class RegistrarPedidoComponent implements OnInit {
   guardarPedido() {
     this.pedidoServicio.registrarPedido(this.pedido).subscribe(dato => {
       console.log(dato);
+      if(dato== null){
+        alert("No se guardo su pedido, debido a que ingreso un producto inexistente")
+      }else{
+        alert("Se ha guardado su producto exitosamente")
+      }
       this.irListaPedidos();
     }, error => console.log(error));
   }

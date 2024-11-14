@@ -45,8 +45,11 @@ public class ProductoControlador {
 
 
   @PostMapping("/productos/{id}")
-  public void eliminarProducto(@PathVariable Integer id){
-      System.out.println("LLEGUE");
+  public boolean eliminarProducto(@PathVariable Integer id){
+    if(id==1){
+      return false;
+    }
       repositorio.deleteById(id);
+      return true;
     }
 }
