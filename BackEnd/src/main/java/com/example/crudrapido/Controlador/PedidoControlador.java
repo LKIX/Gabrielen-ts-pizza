@@ -31,20 +31,11 @@ public class PedidoControlador {
     return repositorio.findAll();
   }
 
-/*@PostMapping("/pedidos")
-  public Producto crearPedido(@RequestBody Pedido pedido){
-    List<Producto> productos = productoRepositorio.findAll();
-    for(Producto producto : productos){
-      if(producto.getNombre().equals(pedido.getPedido1())||producto.getNombre().equals(pedido.getPedido2())||producto.getNombre().equals(pedido.getPedido3())||producto.getNombre().equals(pedido.getPedido4())||producto.getNombre().equals(pedido.getPedido5())||producto.getNombre().equals(pedido.getPedido6())||producto.getNombre().equals(pedido.getPedido7())||producto.getNombre().equals(pedido.getPedido8())||producto.getNombre().equals(pedido.getPedido9())||producto.getNombre().equals(pedido.getPedido10())){
-        System.out.println("encontre producto");
-      }
-      else{
-        System.out.println("no encontre producto");
-        return null;
-      }
-    }
-    return repositorio.save(producto);
-  }*/
+  @PostMapping("/pedidos")
+  public Pedido crearPedido(@RequestBody Pedido pedido){
+
+    return repositorio.save(pedido);
+  }
   @PostMapping("/pedidos/{id}")
   public void eliminarPedido(@PathVariable Integer id){
     repositorio.deleteById(id);
