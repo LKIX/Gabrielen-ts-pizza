@@ -27,4 +27,8 @@ export class PedidoService {
   eliminarPedido(id: number): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}/${id}`, Pedido);
   }
+
+  registrarVenta(pedido: Pedido): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}/${"v"}`, pedido)
+  }
 }

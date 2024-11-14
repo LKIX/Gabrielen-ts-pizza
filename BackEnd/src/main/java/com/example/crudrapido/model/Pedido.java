@@ -13,6 +13,8 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Integer id;
+    private String nombreCliente;
+    private String cedulaCliente;
     private String pedido1;
     private String pedido2;
     private String pedido3;
@@ -24,7 +26,9 @@ public class Pedido {
     private String pedido9;
     private String pedido10;
 
-    public Pedido(String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9,String pedido10) {
+    public Pedido(String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9,String pedido10, String cedulaCliente, String nombreCliente) {
+        this.nombreCliente=nombreCliente;
+        this.cedulaCliente=cedulaCliente;
         this.pedido1 = pedido1;
         this.pedido2 = pedido2;
         this.pedido3 = pedido3;
@@ -127,6 +131,22 @@ public class Pedido {
 
     public void setPedido10(String pedido10) {
         this.pedido10 = pedido10;
+    }
+
+    public String getCedulaCliente() {
+        return cedulaCliente;
+    }
+
+    public void setCedulaCliente(String cedulaCliente) {
+        this.cedulaCliente = cedulaCliente;
+    }
+
+    public String getNombreCliente() {
+        return nombreCliente;
+    }
+
+    public void setNombreCliente(String nombreCliente) {
+        this.nombreCliente = nombreCliente;
     }
 
 }

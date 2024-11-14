@@ -6,8 +6,8 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity(name="pedido")
-@Table(name="tbl_pedido")
+@Entity(name="venta")
+@Table(name="tbl_venta")
 public class Venta {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class Venta {
     private String pedido9;
     private String pedido10;
 
-    public Venta(String cedulaDeIdentidad, String nombre, String pedido10, String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9) {
+    public Venta(String cedulaDeIdentidad, String nombre, String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9, String pedido10) {
         this.cedulaDeIdentidad = cedulaDeIdentidad;
         this.nombre = nombre;
         this.pedido10 = pedido10;

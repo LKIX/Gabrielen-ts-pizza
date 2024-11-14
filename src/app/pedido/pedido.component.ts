@@ -41,5 +41,10 @@ export class PedidoComponent implements OnInit {
     this.router.navigate(["/registro-pedido"])
   }
 
-
+  redirigirPagar(pedido: Pedido) {
+    this.PedidoServicio.registrarVenta(pedido).subscribe(dato => {
+      console.log(dato);
+      this.router.navigate(["/venta"])
+    })
+  }
 }

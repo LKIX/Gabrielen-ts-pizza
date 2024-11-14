@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.crudrapido.Repository.IngredienteRepositorio;
-import com.example.crudrapido.model.Ingrediente;
+import com.example.crudrapido.Repository.VentaRepositorio;
+import com.example.crudrapido.model.Pedido;
+import com.example.crudrapido.model.Venta;
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -28,8 +28,9 @@ public class VentaControlador {
         return repositorio.findAll();
     }
 
-    @PostMapping("/ventas")
-    public Venta guardarVenta(@RequestBody Venta venta){
+    public void guardarVenta(Pedido pedido){
+        Venta venta= new Venta(pedido.getCedulaCliente(),pedido.getNombreCliente(),pedido.getPedido1(),pedido.getPedido2(),pedido.getPedido3(),pedido.getPedido4(),pedido.getPedido5(),pedido.getPedido6(),pedido.getPedido7(),pedido.getPedido8(),pedido.getPedido9(),pedido.getPedido10());
+
         repositorio.save(venta);
     }
 

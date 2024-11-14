@@ -1,5 +1,7 @@
 export class Pedido {
     id: number;
+    nombreCliente: string;
+    cedulaCliente: string;
     pedido1: string;
     pedido2: string;
     pedido3: string;
