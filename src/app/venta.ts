@@ -1,7 +1,8 @@
 export class Venta {
-  id : number;
-  nombre:string;
+  id: number;
+  nombre: string;
   cedula: string;
+  pago: string;
   producto1: string;
   producto2: string;
   producto3: string;

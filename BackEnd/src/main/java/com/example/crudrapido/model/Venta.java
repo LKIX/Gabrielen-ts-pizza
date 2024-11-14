@@ -14,6 +14,7 @@ public class Venta {
     private Integer id;
     private String cedulaDeIdentidad;
     private String nombre;
+    private Float pago;
     private String pedido1;
     private String pedido2;
     private String pedido3;
@@ -25,8 +26,9 @@ public class Venta {
     private String pedido9;
     private String pedido10;
 
-    public Venta(String cedulaDeIdentidad, String nombre, String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9, String pedido10) {
+    public Venta(Float pago,String cedulaDeIdentidad, String nombre, String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9, String pedido10) {
         this.cedulaDeIdentidad = cedulaDeIdentidad;
+        this.pago=pago;
         this.nombre = nombre;
         this.pedido10 = pedido10;
         this.pedido1 = pedido1;
@@ -146,6 +148,14 @@ public class Venta {
 
     public void setPedido10(String pedido10) {
         this.pedido10 = pedido10;
+    }
+
+    public Float getPago() {
+        return pago;
+    }
+
+    public void setPago(Float pago) {
+        this.pago = pago;
     }
 
 }
