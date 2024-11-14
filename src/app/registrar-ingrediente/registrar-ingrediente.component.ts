@@ -25,6 +25,11 @@ export class RegistrarIngredienteComponent implements OnInit {
   guardarIngrediente() {
     this.ingredienteServicio.registrarIngrediente(this.ingrediente).subscribe(dato => {
       console.log(dato);
+      if(dato!=null){
+        alert("Se agrego el ingrediente exitosamente")
+      }else{
+        alert("No se agrego el ingrediente porque ya existe")
+      }
       this.irListaIngredientes();
     }, error => console.log(error));
   }

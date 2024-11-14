@@ -31,7 +31,7 @@
     <tr *ngFor="let venta of ventas">
       <td>{{venta.id}}</td>
       <td>{{venta.nombre}}</td>
-      <td>{{venta.cedula}}</td>
+      <td>{{venta.cedulaDeidentidad}}</td>
       <td>{{venta.pago}}</td>
       <td>
       <button (click)= "eliminarVenta(venta.id)" class="btn btn-info;" style="margin-left : 10px; background-color: crimson;" >Eliminar</button>

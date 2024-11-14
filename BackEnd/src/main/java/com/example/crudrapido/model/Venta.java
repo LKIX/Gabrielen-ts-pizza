@@ -15,147 +15,153 @@ public class Venta {
     private String cedulaDeIdentidad;
     private String nombre;
     private Float pago;
-    private String pedido1;
-    private String pedido2;
-    private String pedido3;
-    private String pedido4;
-    private String pedido5;
-    private String pedido6;
-    private String pedido7;
-    private String pedido8;
-    private String pedido9;
-    private String pedido10;
-
-    public Venta(Float pago,String cedulaDeIdentidad, String nombre, String pedido1, String pedido2, String pedido3, String pedido4, String pedido5, String pedido6, String pedido7, String pedido8, String pedido9, String pedido10) {
-        this.cedulaDeIdentidad = cedulaDeIdentidad;
-        this.pago=pago;
-        this.nombre = nombre;
-        this.pedido10 = pedido10;
-        this.pedido1 = pedido1;
-        this.pedido2 = pedido2;
-        this.pedido3 = pedido3;
-        this.pedido4 = pedido4;
-        this.pedido5 = pedido5;
-        this.pedido6 = pedido6;
-        this.pedido7 = pedido7;
-        this.pedido8 = pedido8;
-        this.pedido9 = pedido9;
-    }
-
-    public Venta(){
-
-    }
+    private Integer pedido1;
+    private Integer pedido2;
+    private Integer pedido3;
+    private Integer pedido4;
+    private Integer pedido5;
+    private Integer pedido6;
+    private Integer pedido7;
+    private Integer pedido8;
+    private Integer pedido9;
+    private Integer pedido10;
 
     public Integer getId() {
-        return id;
+      return id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+      this.id = id;
     }
 
     public String getCedulaDeIdentidad() {
-        return cedulaDeIdentidad;
+      return cedulaDeIdentidad;
     }
 
     public void setCedulaDeIdentidad(String cedulaDeIdentidad) {
-        this.cedulaDeIdentidad = cedulaDeIdentidad;
+      this.cedulaDeIdentidad = cedulaDeIdentidad;
     }
 
     public String getNombre() {
-        return nombre;
+      return nombre;
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getPedido1() {
-        return pedido1;
-    }
-
-    public void setPedido1(String pedido1) {
-        this.pedido1 = pedido1;
-    }
-
-    public String getPedido2() {
-        return pedido2;
-    }
-
-    public void setPedido2(String pedido2) {
-        this.pedido2 = pedido2;
-    }
-
-    public String getPedido3() {
-        return pedido3;
-    }
-
-    public void setPedido3(String pedido3) {
-        this.pedido3 = pedido3;
-    }
-
-    public String getPedido4() {
-        return pedido4;
-    }
-
-    public void setPedido4(String pedido4) {
-        this.pedido4 = pedido4;
-    }
-
-    public String getPedido5() {
-        return pedido5;
-    }
-
-    public void setPedido5(String pedido5) {
-        this.pedido5 = pedido5;
-    }
-
-    public String getPedido6() {
-        return pedido6;
-    }
-
-    public void setPedido6(String pedido6) {
-        this.pedido6 = pedido6;
-    }
-
-    public String getPedido7() {
-        return pedido7;
-    }
-
-    public void setPedido7(String pedido7) {
-        this.pedido7 = pedido7;
-    }
-
-    public String getPedido8() {
-        return pedido8;
-    }
-
-    public void setPedido8(String pedido8) {
-        this.pedido8 = pedido8;
-    }
-
-    public String getPedido9() {
-        return pedido9;
-    }
-
-    public void setPedido9(String pedido9) {
-        this.pedido9 = pedido9;
-    }
-
-    public String getPedido10() {
-        return pedido10;
-    }
-
-    public void setPedido10(String pedido10) {
-        this.pedido10 = pedido10;
+      this.nombre = nombre;
     }
 
     public Float getPago() {
-        return pago;
+      return pago;
     }
 
     public void setPago(Float pago) {
-        this.pago = pago;
+      this.pago = pago;
     }
+
+    public Integer getPedido1() {
+      return pedido1;
+    }
+
+    public void setPedido1(Integer pedido1) {
+      this.pedido1 = pedido1;
+    }
+
+    public Integer getPedido2() {
+      return pedido2;
+    }
+
+    public void setPedido2(Integer pedido2) {
+      this.pedido2 = pedido2;
+    }
+
+    public Integer getPedido3() {
+      return pedido3;
+    }
+
+    public void setPedido3(Integer pedido3) {
+      this.pedido3 = pedido3;
+    }
+
+    public Integer getPedido4() {
+      return pedido4;
+    }
+
+    public void setPedido4(Integer pedido4) {
+      this.pedido4 = pedido4;
+    }
+
+    public Integer getPedido5() {
+      return pedido5;
+    }
+
+    public void setPedido5(Integer pedido5) {
+      this.pedido5 = pedido5;
+    }
+
+    public Integer getPedido6() {
+      return pedido6;
+    }
+
+    public void setPedido6(Integer pedido6) {
+      this.pedido6 = pedido6;
+    }
+
+    public Integer getPedido7() {
+      return pedido7;
+    }
+
+    public void setPedido7(Integer pedido7) {
+      this.pedido7 = pedido7;
+    }
+
+    public Integer getPedido8() {
+      return pedido8;
+    }
+
+    public void setPedido8(Integer pedido8) {
+      this.pedido8 = pedido8;
+    }
+
+    public Integer getPedido9() {
+      return pedido9;
+    }
+
+    public void setPedido9(Integer pedido9) {
+      this.pedido9 = pedido9;
+    }
+
+    public Integer getPedido10() {
+      return pedido10;
+    }
+
+    public void setPedido10(Integer pedido10) {
+      this.pedido10 = pedido10;
+    }
+
+    public Venta(Integer id, String cedulaDeIdentidad, String nombre, Float pago, Integer pedido1, Integer pedido2,
+        Integer pedido3, Integer pedido4, Integer pedido5, Integer pedido6, Integer pedido7, Integer pedido8,
+        Integer pedido9, Integer pedido10) {
+      this.id = id;
+      this.cedulaDeIdentidad = cedulaDeIdentidad;
+      this.nombre = nombre;
+      this.pago = pago;
+      this.pedido1 = pedido1;
+      this.pedido2 = pedido2;
+      this.pedido3 = pedido3;
+      this.pedido4 = pedido4;
+      this.pedido5 = pedido5;
+      this.pedido6 = pedido6;
+      this.pedido7 = pedido7;
+      this.pedido8 = pedido8;
+      this.pedido9 = pedido9;
+      this.pedido10 = pedido10;
+    }
+
+    public Venta(Float pago2, String cedulaCliente, String nombreCliente, Integer pedido12, Integer pedido22,
+            Integer pedido32, Integer pedido42, Integer pedido52, Integer pedido62, Integer pedido72, Integer pedido82,
+            Integer pedido92, Integer pedido102) {
+        //TODO Auto-generated constructor stub
+    }
+
 
 }

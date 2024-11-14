@@ -29,14 +29,16 @@ public class VentaControlador {
 
     @GetMapping("/ventas")
     public List<Venta> ListarVentas(){
-        return repositorio.findAll();
+      List<Venta> ventas = repositorio.findAll();
+      System.out.println(ventas); // Verifica que las ventas tengan los datos correctos
+      return ventas;
     }
 
     public void guardarVenta(Pedido pedido){
         Float pago=(float) 0;
-        List<Producto> lista=productoRepositorio.findAll();  
+        List<Producto> lista=productoRepositorio.findAll();
         for(Producto producto : lista){
-            if(producto.getNombre().equals(pedido.getPedido1())||producto.getNombre().equals(pedido.getPedido2())||producto.getNombre().equals(pedido.getPedido3())||producto.getNombre().equals(pedido.getPedido4())||producto.getNombre().equals(pedido.getPedido5())||producto.getNombre().equals(pedido.getPedido6())||producto.getNombre().equals(pedido.getPedido7())||producto.getNombre().equals(pedido.getPedido8())||producto.getNombre().equals(pedido.getPedido9())||producto.getNombre().equals(pedido.getPedido10())){
+            if(producto.getId().equals(pedido.getPedido1())||producto.getId().equals(pedido.getPedido2())||producto.getId().equals(pedido.getPedido3())||producto.getId().equals(pedido.getPedido4())||producto.getId().equals(pedido.getPedido5())||producto.getId().equals(pedido.getPedido6())||producto.getId().equals(pedido.getPedido7())||producto.getId().equals(pedido.getPedido8())||producto.getId().equals(pedido.getPedido9())||producto.getId().equals(pedido.getPedido10())){
             pago+=producto.getPrecio();
             System.out.println(pago);
             }

@@ -25,6 +25,7 @@ export class VentaComponent implements OnInit {
   private obtenerVenta() {
 
     this.ventaServicio.obtenerListaDeVentas().subscribe(dato => {
+      console.log(dato);
       this.ventas = dato;
     })
   }
@@ -32,6 +33,7 @@ export class VentaComponent implements OnInit {
   eliminarVenta(id: number) {
     this.ventaServicio.eliminarVenta(id).subscribe(dato => {
       console.log(dato);
+      alert("la venta se ha eliminado exitosamente")
       this.obtenerVenta();
     })
   }

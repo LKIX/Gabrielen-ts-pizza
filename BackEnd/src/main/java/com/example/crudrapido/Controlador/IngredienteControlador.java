@@ -50,22 +50,27 @@ public class IngredienteControlador {
     }
 
 @PostMapping("/ingredientes/{id}")
-  public void eliminarIngrediente(@PathVariable Integer id){
+  public boolean eliminarIngrediente(@PathVariable Integer id){
+
+      if(id==1){
+        return false;
+       }
       List<Producto> x =productoRepositorio.findAll();
-      boolean verificar=true;
+
       for (Producto p : x) {
+
         if(p.getIngrediente1().equals(id)||p.getIngrediente2().equals(id)||p.getIngrediente3().equals(id)||p.getIngrediente4().equals(id)||p.getIngrediente5().equals(id)){
         System.out.println("llegué al if xd");
-        verificar=false;
+          return false;
         }
         }
-        if(verificar)
-        {
+
           System.out.println("llegué al principio del else");
           repositorio.deleteById(id);
           System.out.println("llegué al final else");
-        }
-      
+
+          return true;
+
     }
 }
 

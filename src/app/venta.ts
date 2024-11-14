@@ -13,4 +13,5 @@ export class Venta {
   producto8: string;
   producto9: string;
   producto10: string;
+  cedulaDeidentidad: string;
 }

@@ -25,6 +25,11 @@ export class RegistrarProductoComponent implements OnInit {
   guardarProducto() {
     this.productoServicio.registrarProducto(this.producto).subscribe(dato => {
       console.log(dato);
+      if(dato!=null){
+        alert("Se agrego el producto exitosamente")
+      }else{
+        alert("No se agrego el producto porque un ingrediente elegido no existe")
+      }
       this.irListaProductos();
     }, error => console.log(error));
   }

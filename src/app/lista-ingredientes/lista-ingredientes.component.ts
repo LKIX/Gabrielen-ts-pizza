@@ -32,6 +32,11 @@ export class ListaIngredientesComponent implements OnInit {
   eliminarIngrediente(id: number) {
     this.ingredienteServicio.eliminarIngrediente(id).subscribe(dato => {
       console.log(dato);
+      if(dato){
+        alert("Se elimino el ingrediente exitosamente")
+      }else{
+        alert("No se elimino el ingrediente porque esta siendo usado")
+      }
       this.obtenerIngredientes();
     })
   }
