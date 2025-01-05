@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedido } from '../Pedido';
+import { Pedido } from '../../typescript/Pedido';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsModule
-import { PedidoService } from '../pedido.service';
+import { PedidoService } from '../../servicios/pedido.service';
 import { Router } from '@angular/router';
 
 
@@ -25,9 +25,9 @@ export class RegistrarPedidoComponent implements OnInit {
   guardarPedido() {
     this.pedidoServicio.registrarPedido(this.pedido).subscribe(dato => {
       console.log(dato);
-      if(dato== null){
+      if (dato == null) {
         alert("No se guardo su pedido, debido a que ingreso un producto inexistente")
-      }else{
+      } else {
         alert("Se ha guardado su producto exitosamente")
       }
       this.irListaPedidos();

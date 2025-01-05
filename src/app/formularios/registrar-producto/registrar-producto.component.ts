@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Producto } from '../producto';
+import { Producto } from '../../typescript/producto';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsModule
-import { ProductoService } from '../producto.service';
+import { ProductoService } from '../../servicios/producto.service';
 import { Router } from '@angular/router';
 
 
@@ -25,9 +25,9 @@ export class RegistrarProductoComponent implements OnInit {
   guardarProducto() {
     this.productoServicio.registrarProducto(this.producto).subscribe(dato => {
       console.log(dato);
-      if(dato!=null){
+      if (dato != null) {
         alert("Se agrego el producto exitosamente")
-      }else{
+      } else {
         alert("No se agrego el producto porque un ingrediente elegido no existe")
       }
       this.irListaProductos();

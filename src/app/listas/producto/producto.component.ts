@@ -1,7 +1,7 @@
 
-import { ProductoService } from './../producto.service';
+import { ProductoService } from '../../servicios/producto.service';
 import { NgFor } from '@angular/common';
-import { Producto } from './../producto';
+import { Producto } from '../../typescript/producto';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
@@ -32,9 +32,9 @@ export class ProductoComponent implements OnInit {
   eliminarProducto(id: number) {
     this.ProductoServicio.eliminarProducto(id).subscribe(dato => {
       console.log(dato);
-      if(dato){
+      if (dato) {
         alert("El producto se elimino satisfactoriamente")
-      }else{
+      } else {
         alert("No se pudo eliminar su producto debido a que es un producto base")
       }
       this.obtenerProductos();

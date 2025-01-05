@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Ingrediente } from '../ingrediente';
+import { Ingrediente } from '../../typescript/ingrediente';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsModule
-import { IngredienteService } from '../ingrediente.service';
+import { IngredienteService } from '../../servicios/ingrediente.service';
 import { Router } from '@angular/router';
 
 
@@ -25,9 +25,9 @@ export class RegistrarIngredienteComponent implements OnInit {
   guardarIngrediente() {
     this.ingredienteServicio.registrarIngrediente(this.ingrediente).subscribe(dato => {
       console.log(dato);
-      if(dato!=null){
+      if (dato != null) {
         alert("Se agrego el ingrediente exitosamente")
-      }else{
+      } else {
         alert("No se agrego el ingrediente porque ya existe")
       }
       this.irListaIngredientes();

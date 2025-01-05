@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { ListaIngredientesComponent } from "./lista-ingredientes/lista-ingredientes.component";
+import { ListaIngredientesComponent } from "../listas/lista-ingredientes/lista-ingredientes.component";
 import { Router } from '@angular/router';
 import { NgFor } from '@angular/common';
 

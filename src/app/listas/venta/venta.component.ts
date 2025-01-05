@@ -2,8 +2,8 @@
 import { NgFor } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Venta } from '../venta';
-import { VentaService } from '../venta.service';
+import { Venta } from '../../typescript/venta';
+import { VentaService } from '../../servicios/venta.service';
 
 @Component({
   selector: 'app-venta',

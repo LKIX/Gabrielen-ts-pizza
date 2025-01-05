@@ -1,7 +1,7 @@
-import { ListaIngredientesComponent } from "./lista-ingredientes/lista-ingredientes.component";
+import { ListaIngredientesComponent } from "../listas/lista-ingredientes/lista-ingredientes.component";
 import { NgModule } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { RegistrarIngredienteComponent } from "./registrar-ingrediente/registrar-ingrediente.component";
+import { RegistrarIngredienteComponent } from "../formularios/registrar-ingrediente/registrar-ingrediente.component";
 
 const routes: Routes = [{ path: 'ingredientes', component: ListaIngredientesComponent },
 { path: '', redirectTo: 'ingredientes', pathMatch: 'full' },

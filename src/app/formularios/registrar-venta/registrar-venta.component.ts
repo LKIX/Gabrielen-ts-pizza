@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Venta } from '../venta';
+import { Venta } from '../../typescript/venta';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';  // Asegúrate de importar FormsModule
-import { VentaService } from '../venta.service';
+import { VentaService } from '../../servicios/venta.service';
 import { Router } from '@angular/router';
 
 

@@ -1,7 +1,7 @@
 
-import { PedidoService } from './../pedido.service';
+import { PedidoService } from '../../servicios/pedido.service';
 import { NgFor } from '@angular/common';
-import { Pedido } from './../Pedido';
+import { Pedido } from '../../typescript/Pedido';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 

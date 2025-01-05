@@ -36,7 +36,11 @@ public class IngredienteControlador {
             List<Ingrediente> revisar=repositorio.findAll();
             boolean revisarB=true;
             for(Ingrediente i:revisar){
-                if (i.getNombre().equals(ingrediente.getNombre())) {
+              Ingrediente ingrediente1;
+              ingrediente1=repositorio.getById(1);
+              ingrediente1.setCantidad(99);
+              repositorio.save(ingrediente1);
+              if (i.getNombre().equals(ingrediente.getNombre())) {
                     revisarB = false;
                     break;
                 }
@@ -47,6 +51,7 @@ public class IngredienteControlador {
             }
             else
             {return null;}
+
     }
 
 @PostMapping("/ingredientes/{id}")
