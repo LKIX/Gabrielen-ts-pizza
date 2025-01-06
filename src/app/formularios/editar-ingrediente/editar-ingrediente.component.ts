@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./editar-ingrediente.component.css']
 })
 export class EditarIngredienteComponent implements OnInit {
-  id: number;
+  BuscarId: number;
   ingrediente: Ingrediente;
   constructor(private ingredienteServicio: IngredienteService, private router: Router) { }
 
@@ -43,8 +43,14 @@ export class EditarIngredienteComponent implements OnInit {
     this.guardarIngrediente();
   }
 
-  buscarIngrediente(){
-    this.ingrediente = this.ingredienteServicio.obtenerIngrediente(this.id);
 
+  buscarIngrediente() {
+    console.log('arriba');
+    this.ingredienteServicio.obtenerIngrediente(this.BuscarId).subscribe(dato2 => {
+      console.log('mid1');
+      this.ingrediente = dato2;
+      console.log('mid2');
+      console.log('abajo' + this.ingrediente.nombre); // Mover aquí el console.log
+    });
   }
 }

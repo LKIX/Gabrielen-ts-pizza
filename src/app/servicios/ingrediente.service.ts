@@ -32,7 +32,7 @@ export class IngredienteService {
     return this.httpClient.post(`${this.baseURL}`, ingrediente)
   }
 
-  obtenerIngrediente(id: number): Observable<Object> {
-    return this.httpClient.get(`${this.baseURL}/${id}`);
+  obtenerIngrediente(id: number): Observable<Ingrediente> {
+    return this.httpClient.get<Ingrediente>(`${this.baseURL}/${id}`);
   }
 }

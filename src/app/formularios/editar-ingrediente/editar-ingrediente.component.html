@@ -80,7 +80,7 @@
     </style>
     <div class="form-group">
       <label for="id">Escribe el id del producto:</label>
-      <input type="text" id="busquedaId" [(ngModel)]="buscarIngrediente" />
+      <input type="text" id="busquedaId" [(ngModel)]="BuscarId" />
     </div>
     <h2>Editar Ingrediente</h2>
     <form (ngSubmit)="onSubmit()">
@@ -115,6 +115,6 @@
 
 </div>
 <div>
-  <button type="submit" (click)="buscarIngrediente()" class="btn2">Buscar ingrediente</button>
+  <button type="submit" class="btn2" (click)="buscarIngrediente()">Buscar ingrediente</button>
 </div>
 

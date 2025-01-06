@@ -1,6 +1,5 @@
 package com.example.crudrapido.Controlador;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,19 +31,21 @@ public class IngredienteControlador {
         return repositorio.findAll();
     }
 
-    @GetMapping("/ingredientes/{id}")
-    public Optional<Ingrediente> buscarIngrediente(@PathVariable Integer id){
-      return repositorio.findById(id);
+    @GetMapping("/ingredientes/{id}") public Ingrediente buscarIngrediente(@RequestBody Integer id){
+      if(repositorio.existsById(id)){
+        System.out.println("entró en el if"+id);
+        Ingrediente aaa=repositorio.getById(id);
+        System.out.println(aaa.getNombre()+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+        return aaa;
+      }
+      System.out.println("fuera del if");
+      return null;
     }
 
     @PostMapping("/ingredientes") public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
             List<Ingrediente> revisar=repositorio.findAll();
             boolean revisarB=true;
             for(Ingrediente i:revisar){
-              Ingrediente ingrediente1;
-              ingrediente1=repositorio.getById(1);
-              ingrediente1.setCantidad(99);
-              repositorio.save(ingrediente1);
               if (i.getNombre().equals(ingrediente.getNombre())) {
                     revisarB = false;
                     break;
