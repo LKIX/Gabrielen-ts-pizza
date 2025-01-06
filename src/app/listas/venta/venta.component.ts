@@ -41,6 +41,8 @@ export class VentaComponent implements OnInit {
   redirigirVenta() {
     this.router.navigate(["/registro-venta"])
   }
-
+  editar() {
+    this.router.navigate(["/editar-venta"]);
+  }
 
 }

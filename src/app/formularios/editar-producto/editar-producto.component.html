@@ -1,0 +1,176 @@
+
+  <style>
+      .form-container {
+          background: #fff;
+          padding: 20px;
+          border-radius: 5px;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .form-container h2 {
+          margin-bottom: 15px;
+      }
+
+      .form-group {
+          margin-bottom: 15px;
+      }
+
+      .form-group label {
+          display: block;
+          margin-bottom: 5px;
+      }
+
+      .form-group input {
+          width: 100%;
+          padding: 8px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+      }
+
+      .form-group .btn {
+          background-color: #4CAF50;
+          /* Color verde */
+          color: white;
+          /* Texto blanco */
+          padding: 10px 20px;
+          /* Relleno */
+          border: none;
+          /* Sin bordes */
+          border-radius: 4px;
+          /* Bordes redondeados */
+          cursor: pointer;
+          /* Manito de cursor */
+          font-size: 16px;
+          /* Tamaño de fuente */
+          transition: background-color 0.3s ease;
+          /* Transición suave */
+          position:absolute;
+          left: 701px;
+          top: 752px;
+      }
+
+      .form-group .btn:hover {
+          background-color: #45a049;
+          /* Color verde más oscuro al pasar el cursor */
+      }
+       .btn2 {
+          background-color: #4CAF50;
+          /* Color verde */
+          color: white;
+          /* Texto blanco */
+          padding: 10px 20px;
+          /* Relleno */
+          border: none;
+          /* Sin bordes */
+          border-radius: 4px;
+          /* Bordes redondeados */
+          cursor: pointer;
+          /* Manito de cursor */
+          font-size: 16px;
+          /* Tamaño de fuente */
+          transition: background-color 0.3s ease;
+          /* Transición suave */
+          top: 210px;
+          position: absolute;
+          left: 710px
+
+      }
+
+      .btn2:hover {
+          background-color: #45a049;
+          /* Color verde más oscuro al pasar el cursor */
+      }
+
+      .btn3 {
+          background-color: #4CAF50;
+          /* Color verde */
+          color: white;
+          /* Texto blanco */
+          padding: 10px 20px;
+          /* Relleno */
+          border: none;
+          /* Sin bordes */
+          border-radius: 4px;
+          /* Bordes redondeados */
+          cursor: pointer;
+          /* Manito de cursor */
+          font-size: 16px;
+          /* Tamaño de fuente */
+          transition: background-color 0.3s ease;
+          /* Transición suave */
+          top: 1100px;
+          position: absolute;
+          left: 680px
+
+      }
+
+      .btn3:hover {
+          background-color: #45a049;
+          /* Color verde más oscuro al pasar el cursor */
+      }
+
+
+  </style>
+  <div class="form-container">
+  <div class="form-group">
+    <label for="id">Escribe el id del producto:</label>
+    <input type="text" id="busquedaId" [(ngModel)]="BuscarId" />
+  </div>
+  <br><br>
+  <h2>Editar Producto</h2>
+  <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+          <label for="nombre">Nombre del Producto:</label>
+          <input type="text" id="nombre" [(ngModel)]="producto.nombre" name="nombre" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidad">Precio Individual:</label>
+          <input type="number" id="Precio" [(ngModel)]="producto.precioIndividual" name="PrecioIndividual" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidadPizzaGrande">Precio Grande:</label>
+          <input type="number" id="cantidadPizzaGrande" [(ngModel)]="producto.precioGrande"
+              name="PrecioGrande" required>
+      </div>
+      <div class="form-group">
+          <label for="cantidadPizzaMediana">Precio Mediana:</label>
+          <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.precio"
+              name="PrecioMediana" required>
+      </div>
+      <div class="form-group">
+        <label for="cantidadPizzaMediana">ingrediente ID (Si no desea agregar nada, ingrese "1"):</label>
+        <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.ingrediente1"
+            name="ingrediente1" required>
+        </div>
+      <div class="form-group">
+      <label for="cantidadPizzaMediana">ingrediente ID (Si no desea agregar nada, ingrese "1"):</label>
+      <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.ingrediente2"
+          name="ingrediente2" required>
+      </div>
+      <div class="form-group">
+        <label for="cantidadPizzaMediana">ingrediente ID (Si no desea agregar nada, ingrese "1"):</label>
+        <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.ingrediente3"
+            name="ingrediente3" required>
+      </div>
+      <div class="form-group">
+        <label for="cantidadPizzaMediana">ingrediente ID (Si no desea agregar nada, ingrese "1"):</label>
+        <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.ingrediente4"
+            name="ingrediente4"required>
+      </div>
+      <div class="form-group">
+        <label for="cantidadPizzaMediana">ingrediente ID (Si no desea agregar nada, ingrese "1"):</label>
+        <input type="number" id="cantidadPizzaMediana" [(ngModel)]="producto.ingrediente5"
+            name="ingrediente5" required>
+      </div>
+      <br><br>
+        <div class="form-group">
+            <button type="submit" class="btn3">Registrar Ingrediente</button>
+        </div>
+
+    </form>
+  </div>
+
+<div>
+<button type="button" class="btn2" (click)="buscarProducto()">Buscar producto</button>
+</div>
+

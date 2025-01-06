@@ -23,14 +23,14 @@ export class RegistrarVentaComponent implements OnInit {
   }
 
   guardarVenta() {
-    this.ventaServicio.registrarVenta(this.venta).subscribe(dato => {
+    this.ventaServicio.registrarVenta(this.venta.nombre, this.venta.id).subscribe(dato => {
       console.log(dato);
       this.irListaVentas();
     }, error => console.log(error));
   }
 
   irListaVentas() {
-    this.router.navigate(['lista-ventas'])
+    this.router.navigate(['venta'])
   }
 
 

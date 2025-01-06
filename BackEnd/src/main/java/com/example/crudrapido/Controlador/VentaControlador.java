@@ -14,6 +14,8 @@ import com.example.crudrapido.Repository.VentaRepositorio;
 import com.example.crudrapido.model.Pedido;
 import com.example.crudrapido.model.Producto;
 import com.example.crudrapido.model.Venta;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @RestController
 @RequestMapping("/api/v1/")
@@ -45,6 +47,14 @@ public class VentaControlador {
         Venta venta= new Venta(pago,pedido.getCedulaCliente(),pedido.getNombreCliente(),pedido.getPedido1(),pedido.getPedido2(),pedido.getPedido3(),pedido.getPedido4(),pedido.getPedido5(),pedido.getPedido6(),pedido.getPedido7(),pedido.getPedido8(),pedido.getPedido9(),pedido.getPedido10());
         repositorio.save(venta);
     }
+
+    @PostMapping("/ventas")
+    public void guardarVenta(@PathVariable String nombre, Integer id){
+      Venta venta = this.repositorio.getById(id);
+      venta.setNombre(nombre);
+      this.repositorio.save(venta);
+    }
+
 
     @PostMapping("/ventas/{id}")
     public void eliminarVenta(@PathVariable Integer id){

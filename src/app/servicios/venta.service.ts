@@ -19,8 +19,8 @@ export class VentaService {
     return this.httpClient.get<Venta[]>(`${this.baseURL}`);
   }
 
-  registrarVenta(venta: Venta): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, venta)
+  registrarVenta(nombre : String, id: number): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}`, nombre)
 
   }
 

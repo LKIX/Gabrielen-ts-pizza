@@ -17,7 +17,7 @@ import { FormsModule } from '@angular/forms';
 export class ListaIngredientesComponent implements OnInit {
 
   ingredientes: Ingrediente[]; // Inicializa la lista de ingredientes
-  ingredienteBuscados: Ingrediente[];
+
   busqueda: string = ''; // Variable para almacenar la búsqueda
 
   constructor(private ingredienteServicio: IngredienteService, private router: Router) { }
