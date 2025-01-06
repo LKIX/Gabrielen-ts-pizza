@@ -47,7 +47,6 @@ export class ListaIngredientesComponent implements OnInit {
   redirigir() {
     this.router.navigate(["/registro-ingredientes"]);
   }
-
   almacenarBusqueda() {
     console.log('Valor de búsqueda almacenado:', this.busqueda); // Muestra el valor en la consola
     for (let i = 0; i < this.ingredientes.length; i++) {
@@ -55,7 +54,14 @@ export class ListaIngredientesComponent implements OnInit {
       }
       else {
         this.ingredientes.splice(i, 1);
+        i--;
       }
     }
+  }
+  actualizar() {
+    this.obtenerIngredientes();
+  }
+  editar(ingrediente: Ingrediente) {
+    this.router.navigate(["/editar-ingrediente", ingrediente]);
   }
 }

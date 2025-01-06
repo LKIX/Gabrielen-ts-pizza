@@ -34,6 +34,11 @@ export const routes: Routes = [
         loadComponent: () => import('../formularios/registrar-venta/registrar-venta.component').then(m => m.RegistrarVentaComponent)
     }
 
+    , {
+        path: 'editar-ingrediente',
+        loadComponent: () => import('../formularios/editar-ingrediente/editar-ingrediente.component').then(m => m.EditarIngredienteComponent)
+    }
+
 
 
 

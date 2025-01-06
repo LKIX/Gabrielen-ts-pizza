@@ -1,0 +1,85 @@
+<div class="form-container">
+    <style>
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h2 {
+            margin-bottom: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .form-group .btn {
+            background-color: #4CAF50;
+            /* Color verde */
+            color: white;
+            /* Texto blanco */
+            padding: 10px 20px;
+            /* Relleno */
+            border: none;
+            /* Sin bordes */
+            border-radius: 4px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Manito de cursor */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            transition: background-color 0.3s ease;
+            /* Transición suave */
+        }
+
+        .form-group .btn:hover {
+            background-color: #45a049;
+            /* Color verde más oscuro al pasar el cursor */
+        }
+    </style>
+    <h2>Editar Ingrediente</h2>
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="nombre">Nombre del Ingrediente:</label>
+            <label for="">{{ingrediente.id}}</label>
+            <input type="text" id="nombre" [(ngModel)]="ingrediente.nombre" name="nombre" placeholder="queso" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidad">Cantidad:</label>
+            <input type="number" id="cantidad" [(ngModel)]="ingrediente.cantidad" name="cantidad" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidadPizzaPequena">Cantidad Pizza Pequeña:</label>
+            <input type="number" id="cantidadPizzaPequena" [(ngModel)]="ingrediente.cantidadPizzaIndividual"
+                name="cantidadPizzaPequena" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidadPizzaMediana">Cantidad Pizza Mediana:</label>
+            <input type="number" id="cantidadPizzaMediana" [(ngModel)]="ingrediente.cantidadPizzaMediana"
+                name="cantidadPizzaMediana" required>
+        </div>
+        <div class="form-group">
+            <label for="cantidadPizzaGrande">Cantidad Pizza Grande:</label>
+            <input type="number" id="cantidadPizzaGrande" [(ngModel)]="ingrediente.cantidadPizzaGrande"
+                name="cantidadPizzaGrande" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn">Registrar Ingrediente</button>
+        </div>
+    </form>
+</div>
+

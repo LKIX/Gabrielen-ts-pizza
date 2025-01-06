@@ -31,8 +31,7 @@ public class IngredienteControlador {
         return repositorio.findAll();
     }
 
-    @PostMapping("/ingredientes")
-    public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
+    @PostMapping("/ingredientes") public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
             List<Ingrediente> revisar=repositorio.findAll();
             boolean revisarB=true;
             for(Ingrediente i:revisar){
@@ -54,8 +53,7 @@ public class IngredienteControlador {
 
     }
 
-@PostMapping("/ingredientes/{id}")
-  public boolean eliminarIngrediente(@PathVariable Integer id){
+@PostMapping("/ingredientes/{id}") public boolean eliminarIngrediente(@PathVariable Integer id){
 
       if(id==1){
         return false;
@@ -77,5 +75,12 @@ public class IngredienteControlador {
           return true;
 
     }
+    @PostMapping("/ingredientes1") public boolean editarIngrediente(@PathVariable Ingrediente ingrediente){
+      repositorio.save(ingrediente);
+      return true;   
+      } 
 }
+
+    
+
 
