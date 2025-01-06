@@ -50,12 +50,42 @@
             background-color: #45a049;
             /* Color verde más oscuro al pasar el cursor */
         }
+         .btn2 {
+            background-color: #4CAF50;
+            /* Color verde */
+            color: white;
+            /* Texto blanco */
+            padding: 10px 20px;
+            /* Relleno */
+            border: none;
+            /* Sin bordes */
+            border-radius: 4px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Manito de cursor */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            transition: background-color 0.3s ease;
+            /* Transición suave */
+            top: 105px;
+            position: absolute;
+            left: 1000px
+
+        }
+
+        .btn2:hover {
+            background-color: #45a049;
+            /* Color verde más oscuro al pasar el cursor */
+        }
     </style>
+    <div class="form-group">
+      <label for="id">Escribe el id del producto:</label>
+      <input type="text" id="busquedaId" [(ngModel)]="buscarIngrediente" />
+    </div>
     <h2>Editar Ingrediente</h2>
     <form (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="nombre">Nombre del Ingrediente:</label>
-            <label for="">{{ingrediente.id}}</label>
             <input type="text" id="nombre" [(ngModel)]="ingrediente.nombre" name="nombre" placeholder="queso" required>
         </div>
         <div class="form-group">
@@ -80,6 +110,11 @@
         <div class="form-group">
             <button type="submit" class="btn">Registrar Ingrediente</button>
         </div>
+
     </form>
+
+</div>
+<div>
+  <button type="submit" (click)="buscarIngrediente()" class="btn2">Buscar ingrediente</button>
 </div>
 

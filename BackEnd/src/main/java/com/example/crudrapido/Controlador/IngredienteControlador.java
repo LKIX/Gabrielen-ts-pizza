@@ -1,5 +1,6 @@
 package com.example.crudrapido.Controlador;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -29,6 +30,11 @@ public class IngredienteControlador {
     @GetMapping("/ingredientes")
     public List<Ingrediente> ListarIngredientes(){
         return repositorio.findAll();
+    }
+
+    @GetMapping("/ingredientes/{id}")
+    public Optional<Ingrediente> buscarIngrediente(@PathVariable Integer id){
+      return repositorio.findById(id);
     }
 
     @PostMapping("/ingredientes") public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
@@ -77,10 +83,10 @@ public class IngredienteControlador {
     }
     @PostMapping("/ingredientes1") public boolean editarIngrediente(@PathVariable Ingrediente ingrediente){
       repositorio.save(ingrediente);
-      return true;   
-      } 
+      return true;
+      }
 }
 
-    
+
 
 

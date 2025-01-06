@@ -95,7 +95,38 @@
     color: #4CAF50;
     /* Cambia el texto a blanco al pasar el cursor */
   }
-  
+
+  .act2{
+    position: absolute;
+    top: 103px;
+    left: 400px;
+    background-color: #4CAF50;
+    /* Color de fondo blanco */
+    color: white;
+    /* Color del texto verde */
+    padding: 5px 10px;
+    /* Relleno más pequeño */
+    font-size: 16px;
+    /* Tamaño de fuente más pequeño */
+    border: 1px solid #4CAF50;
+    /* Borde verde */
+    border-radius: 4px;
+    /* Bordes redondeados */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transición suave */
+    margin-left: 10px;
+    /* Margen a la izquierda para separar del input */
+    margin-bottom: 3px;
+    height: 50px;
+    width: 80px;
+  }
+    .act2:hover {
+    background-color: white;
+    /* Cambia a verde al pasar el cursor */
+    color: #4CAF50;
+    /* Cambia el texto a blanco al pasar el cursor */
+  }
+  }
 
 </style>
 <div class="btn-container">
@@ -105,6 +136,9 @@
 </div>
 <div>
 <button class="act" (click)="actualizar()">Actualizar</button>
+  </div>
+  <div>
+<button class="act2" (click)="editar()">Editar</button>
   </div>
 <br><br>
 
@@ -127,10 +161,6 @@
       <td>{{ingrediente.cantidadPizzaGrande}}</td>
       <td>{{ingrediente.cantidadPizzaMediana}}</td>
       <td>{{ingrediente.cantidadPizzaIndividual}}</td>
-      <td>
-        <button class="btn btn-info;" (click)="editar(ingrediente)"
-         style="margin-left : 10px; background-color:rgb(58, 58, 210)">Editar</button>
-      </td>
       <td>
         <button (click)="eliminarIngrediente(ingrediente.id)" class="btn"
           style="margin-left: 10px; background-color: crimson;">Eliminar</button>

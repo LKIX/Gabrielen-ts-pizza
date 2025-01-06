@@ -31,4 +31,8 @@ export class IngredienteService {
   editarIngrediente(ingrediente: Ingrediente): Observable<Object> {
     return this.httpClient.post(`${this.baseURL}`, ingrediente)
   }
+
+  obtenerIngrediente(id: number): Observable<Object> {
+    return this.httpClient.get(`${this.baseURL}/${id}`);
+  }
 }

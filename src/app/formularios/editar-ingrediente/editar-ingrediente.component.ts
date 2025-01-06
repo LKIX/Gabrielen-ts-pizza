@@ -14,8 +14,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./editar-ingrediente.component.css']
 })
 export class EditarIngredienteComponent implements OnInit {
-
-  ingrediente: Ingrediente = new Ingrediente();
+  id: number;
+  ingrediente: Ingrediente;
   constructor(private ingredienteServicio: IngredienteService, private router: Router) { }
 
   ngOnInit(): void {
@@ -41,5 +41,10 @@ export class EditarIngredienteComponent implements OnInit {
 
   onSubmit() {
     this.guardarIngrediente();
+  }
+
+  buscarIngrediente(){
+    this.ingrediente = this.ingredienteServicio.obtenerIngrediente(this.id);
+
   }
 }

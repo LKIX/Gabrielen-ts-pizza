@@ -61,7 +61,7 @@ export class ListaIngredientesComponent implements OnInit {
   actualizar() {
     this.obtenerIngredientes();
   }
-  editar(ingrediente: Ingrediente) {
-    this.router.navigate(["/editar-ingrediente", ingrediente]);
+  editar() {
+    this.router.navigate(["/editar-ingrediente"]);
   }
 }
