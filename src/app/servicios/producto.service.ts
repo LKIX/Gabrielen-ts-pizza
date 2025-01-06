@@ -29,8 +29,4 @@ export class ProductoService {
 
     return this.httpClient.post(`${this.baseURL}/${id}`, Producto);
   }
-
-  reemplazarProducto(producto: Producto): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, Producto)
-    }
 }
