@@ -44,6 +44,9 @@
             /* Tamaño de fuente */
             transition: background-color 0.3s ease;
             /* Transición suave */
+            position:absolute;
+            left: 701px;
+            top: 752px;
         }
 
         .form-group .btn:hover {
@@ -67,9 +70,9 @@
             /* Tamaño de fuente */
             transition: background-color 0.3s ease;
             /* Transición suave */
-            top: 105px;
+            top: 210px;
             position: absolute;
-            left: 1000px
+            left: 710px
 
         }
 
@@ -82,11 +85,12 @@
       <label for="id">Escribe el id del producto:</label>
       <input type="text" id="busquedaId" [(ngModel)]="BuscarId" />
     </div>
+    <br><br>
     <h2>Editar Ingrediente</h2>
     <form (ngSubmit)="onSubmit()">
         <div class="form-group">
             <label for="nombre">Nombre del Ingrediente:</label>
-            <input type="text" id="nombre" [(ngModel)]="ingrediente.nombre" name="nombre" placeholder="queso" required>
+            <input type="text" id="nombre" [(ngModel)]="ingrediente.nombre" name="nombre" required>
         </div>
         <div class="form-group">
             <label for="cantidad">Cantidad:</label>
@@ -107,6 +111,7 @@
             <input type="number" id="cantidadPizzaGrande" [(ngModel)]="ingrediente.cantidadPizzaGrande"
                 name="cantidadPizzaGrande" required>
         </div>
+        <br><br>
         <div class="form-group">
             <button type="submit" class="btn">Registrar Ingrediente</button>
         </div>
@@ -115,6 +120,6 @@
 
 </div>
 <div>
-  <button type="submit" class="btn2" (click)="buscarIngrediente()">Buscar ingrediente</button>
+  <button type="button" class="btn2" (click)="buscarIngrediente()">Buscar ingrediente</button>
 </div>
 

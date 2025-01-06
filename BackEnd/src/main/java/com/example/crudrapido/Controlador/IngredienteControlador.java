@@ -31,17 +31,6 @@ public class IngredienteControlador {
         return repositorio.findAll();
     }
 
-    @GetMapping("/ingredientes/{id}") public Ingrediente buscarIngrediente(@RequestBody Integer id){
-      if(repositorio.existsById(id)){
-        System.out.println("entró en el if"+id);
-        Ingrediente aaa=repositorio.getById(id);
-        System.out.println(aaa.getNombre()+"AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-        return aaa;
-      }
-      System.out.println("fuera del if");
-      return null;
-    }
-
     @PostMapping("/ingredientes") public Ingrediente guardarIngrediente(@RequestBody Ingrediente ingrediente){
             List<Ingrediente> revisar=repositorio.findAll();
             boolean revisarB=true;
@@ -82,7 +71,8 @@ public class IngredienteControlador {
           return true;
 
     }
-    @PostMapping("/ingredientes1") public boolean editarIngrediente(@PathVariable Ingrediente ingrediente){
+    @PostMapping("/ingredientes1") public boolean editarIngrediente(@RequestBody Ingrediente ingrediente){
+      System.out.println(ingrediente.getNombre()+"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
       repositorio.save(ingrediente);
       return true;
       }

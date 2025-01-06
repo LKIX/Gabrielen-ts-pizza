@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
 
 
 @Component({
-  selector: 'app-registrar-ingrediente',
+  selector: 'app-editar-ingrediente',
   standalone: true,
   imports: [CommonModule, FormsModule],  // Asegúrate de incluir FormsModule
   templateUrl: './editar-ingrediente.component.html',
@@ -15,21 +15,18 @@ import { Router } from '@angular/router';
 })
 export class EditarIngredienteComponent implements OnInit {
   BuscarId: number;
-  ingrediente: Ingrediente;
+  ingrediente: Ingrediente = new Ingrediente();
+  ingredientes: Ingrediente[];
+  encontrar: boolean = false;
   constructor(private ingredienteServicio: IngredienteService, private router: Router) { }
 
   ngOnInit(): void {
     console.log(this.ingrediente);
   }
 
-  guardarIngrediente() {
-    this.ingredienteServicio.registrarIngrediente(this.ingrediente).subscribe(dato => {
+  reemplazarIngrediente() {
+    this.ingredienteServicio.reemplazarIngrediente(this.ingrediente).subscribe(dato => {
       console.log(dato);
-      if (dato != null) {
-        alert("Se agrego el ingrediente exitosamente")
-      } else {
-        alert("No se agrego el ingrediente porque ya existe")
-      }
       this.irListaIngredientes();
     }, error => console.log(error));
   }
@@ -40,17 +37,31 @@ export class EditarIngredienteComponent implements OnInit {
 
 
   onSubmit() {
-    this.guardarIngrediente();
+    this.reemplazarIngrediente();
   }
 
-
   buscarIngrediente() {
-    console.log('arriba');
-    this.ingredienteServicio.obtenerIngrediente(this.BuscarId).subscribe(dato2 => {
-      console.log('mid1');
-      this.ingrediente = dato2;
-      console.log('mid2');
-      console.log('abajo' + this.ingrediente.nombre); // Mover aquí el console.log
-    });
+    if (this.BuscarId != 1) {
+      this.ingredienteServicio.obtenerListaDeIngredientes().subscribe(dato => {
+        this.ingredientes = dato;
+      });
+      console.log(this.ingredientes[0].id);
+      for (let i = 0; i < this.ingredientes.length; i++) {
+        if (this.BuscarId == this.ingredientes[i].id) {
+          this.encontrar = true;
+          this.ingrediente = this.ingredientes[i];
+          console.log(this.ingrediente);
+        }
+      }
+      if (this.encontrar == false) {
+        alert("No se encontró el ingrediente");
+      }
+      else {
+        this.encontrar = false;
+      }
+    }
+    else {
+      alert("ID del ingrediente base");
+    }
   }
 }

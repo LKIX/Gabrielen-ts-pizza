@@ -28,8 +28,8 @@ export class IngredienteService {
     return this.httpClient.post(`${this.baseURL}/${id}`, Ingrediente);
   }
 
-  editarIngrediente(ingrediente: Ingrediente): Observable<Object> {
-    return this.httpClient.post(`${this.baseURL}`, ingrediente)
+  reemplazarIngrediente(ingrediente: Ingrediente): Observable<Object> {
+    return this.httpClient.post(`${this.baseURL}1`, ingrediente)
   }
 
   obtenerIngrediente(id: number): Observable<Ingrediente> {

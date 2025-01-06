@@ -50,12 +50,13 @@ export class ListaIngredientesComponent implements OnInit {
   almacenarBusqueda() {
     console.log('Valor de búsqueda almacenado:', this.busqueda); // Muestra el valor en la consola
     for (let i = 0; i < this.ingredientes.length; i++) {
-      if (this.busqueda == this.ingredientes[i].nombre) {
+      if (this.busqueda == this.ingredientes[i].nombre || this.busqueda == String(this.ingredientes[i].id)) {
       }
       else {
         this.ingredientes.splice(i, 1);
         i--;
       }
+
     }
   }
   actualizar() {
