@@ -42,7 +42,7 @@ export class VentaComponent implements OnInit {
     this.router.navigate(["/registro-venta"])
   }
   editar() {
-    this.router.navigate(["/editar-venta"]);
+    this.router.navigate(["/registrar-venta"]);
   }
 
 }

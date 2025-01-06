@@ -41,27 +41,29 @@ export class EditarProductoComponent implements OnInit {
   }
 
   buscarProducto() {
-    if (this.BuscarId != 1) {
-      this.productoServicio.obtenerListaDeProductos().subscribe(dato => {
-        this.productos = dato;
-      });
-      console.log(this.productos[0].id);
-      for (let i = 0; i < this.productos.length; i++) {
-        if (this.BuscarId == this.productos[i].id) {
-          this.encontrar = true;
-          this.producto = this.productos[i];
-          console.log(this.producto);
+    for (let j = 0; j < 2; j++) {
+      if (this.BuscarId != 1) {
+        this.productoServicio.obtenerListaDeProductos().subscribe(dato => {
+          this.productos = dato;
+        });
+        console.log(this.productos);
+        for (let i = 0; i < this.productos.length; i++) {
+          if (this.BuscarId == this.productos[i].id) {
+            this.encontrar = true;
+            this.producto = this.productos[i];
+            console.log(this.producto);
+          }
+        }
+        if (this.encontrar == false) {
+          alert("No se encontró el producto");
+        }
+        else {
+          this.encontrar = false;
         }
       }
-      if (this.encontrar == false) {
-        alert("No se encontró el producto");
-      }
       else {
-        this.encontrar = false;
+        alert("ID del producto base");
       }
-    }
-    else {
-      alert("ID del producto base");
     }
   }
 }

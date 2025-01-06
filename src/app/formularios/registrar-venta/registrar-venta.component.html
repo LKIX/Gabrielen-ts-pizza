@@ -40,71 +40,55 @@
 .form-group .btn:hover {
   background-color: #45a049; /* Color verde más oscuro al pasar el cursor */
 }
+         .btn2 {
+            background-color: #4CAF50;
+            /* Color verde */
+            color: white;
+            /* Texto blanco */
+            padding: 10px 20px;
+            /* Relleno */
+            border: none;
+            /* Sin bordes */
+            border-radius: 4px;
+            /* Bordes redondeados */
+            cursor: pointer;
+            /* Manito de cursor */
+            font-size: 16px;
+            /* Tamaño de fuente */
+            transition: background-color 0.3s ease;
+            /* Transición suave */
+            top: 210px;
+            position: absolute;
+            left: 710px
+
+        }
+
+        .btn2:hover {
+            background-color: #45a049;
+            /* Color verde más oscuro al pasar el cursor */
+        }
+
 </style>
-  <h2>Registrar Venta</h2>
+  <div class="form-group">
+    <label for="id">Escribe el id del producto:</label>
+    <input type="text" id="busquedaId" [(ngModel)]="buscarId" />
+  </div>
+  <br><br>
+<h2>Modificar Venta</h2>
   <form (ngSubmit)="onSubmit()">
       <div class="form-group">
           <label for="nombre">Nombre de la Venta:</label>
           <input type="text" id="nombre" [(ngModel)]="venta.nombre" name="nombre" required>
       </div>
       <div class="form-group">
-          <label for="cedula">Cedula:</label>
-          <input type="number" id="ccedula" [(ngModel)]="venta.cedulaDeidentidad" name="cedula" required>
+          <label for="cedula">Pago:</label>
+          <input type="text" id="cedula" [(ngModel)]="venta.pago" name="cedula" required>
       </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto1" [(ngModel)]="venta.producto1"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto2">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto2" [(ngModel)]="venta.producto2"
-            name="prodcuto2" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto3" [(ngModel)]="venta.producto3"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto4" [(ngModel)]="venta.producto4"
-            name="prodcuto1" required>
-      </div>
-      <var> <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto5" [(ngModel)]="venta.producto5"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto6" [(ngModel)]="venta.producto6"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto7" [(ngModel)]="venta.producto7"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto8" [(ngModel)]="venta.producto8"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto9" [(ngModel)]="venta.producto9"
-            name="prodcuto1" required>
-      </div>
-      <div class="form-group">
-        <label for="producto1">Producto ID (Si no desea agregar nada, ingrese "1"):</label>
-        <input type="number" id="prodcuto10" [(ngModel)]="venta.producto10"
-            name="prodcuto1" required>
-      </div>
-    </var>
-
       <div class="form-group">
           <button type="submit" class="btn">Registrar Venta</button>
       </div>
   </form>
+</div>
+<div>
+  <button type="button" class="btn2" (click)="buscarVenta()">Buscar Venta</button>
 </div>

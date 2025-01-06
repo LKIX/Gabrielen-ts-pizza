@@ -2,6 +2,7 @@ export class Venta {
   id: number;
   nombre: string;
   pago: string;
+  cedulaDeidentidad: string;
   producto1: number;
   producto2: number;
   producto3: number;
@@ -11,6 +12,5 @@ export class Venta {
   producto7: number;
   producto8: number;
   producto9: number;
-  producto10:number ;
-  cedulaDeidentidad: string;
+  producto10: number;
 }
